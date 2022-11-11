@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-color: cornflowerblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrapper {
+    position: absolute;
+    border: 3px solid black;
+    border-radius: 5px;
+    width: 300px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: darkgrey;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.wrapper > p {
+    position: fixed;
+    left: 50%;
+    top: 2.5%;
+    transform: translate(-50%);
+    letter-spacing: 0.3em;
+    color: bisque;
 }
 
-.App-link {
-  color: #61dafb;
+.display {
+    border: ridge black;
+    width: 90%;
+    height: 15%;
+    margin: 15% auto 5% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: green;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sum {
+    font-size: 1em;
+    margin-top: 2%;
+}
+
+.input {
+    font-size: 1.75em;
+    margin-bottom: 2%;
+}
+
+.display > p {
+    white-space: nowrap;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.buttonBox {
+    border: 1px groove black;
+    width: 90%;
+    height: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-gap: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.button {
+    border: ridge black;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: darkslategray;
+    color: wheat;
+}
+
+.button:last-of-type {
+    width: 115px;
+}
+
+.button:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
