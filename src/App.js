@@ -24,16 +24,7 @@ function App() {
           current: button
         }
       });
-    } else if (display.current[display.current.length -1] === '-' || display.current[display.current.length -1] === '+' || display.current[display.current.length -1] === '*' || display.current[display.current.length -1] === '/') {
-      setDisplay(prevDisplay => {
-        return {
-          ...prevDisplay,
-          sum: display.sum === '0' ? display.current : display.sum + display.current,
-          current: button
-        }
-      })
-    }
-    else {
+    } else {
       setDisplay(prevDisplay => {
         return {
           ...prevDisplay,
@@ -59,46 +50,16 @@ function App() {
     setDisplay(prevDisplay => {
       return {
         ...prevDisplay,
-        sum: display.sum,
-        current: display.current.slice(0, display.current.length - 1) + button
-      }
-    })
-    :
-    (display.current[display.current.length -1] === '/' || display.current[display.current.length -1] === '*' || display.current[display.current.length -1] === '+') && button !== '-' 
-    ?
-    setDisplay(prevDisplay => {
-      return {
-        ...prevDisplay,
-        sum: display.sum,
-        current: display.current.slice(0, display.current.length - 1) + button
-      }
-    })
-    :
-    (display.current[display.current.length -1] === '/' || display.current[display.current.length -1] === '*' || display.current[display.current.length -1] === '+') && button === '-' 
-    ?
-    setDisplay(prevDisplay => {
-      return {
-        ...prevDisplay,
-        sum: display.sum === '0' ? display.current : display.sum + display.current,
-        current: button
-      }
-    })
-    :
-    (display.sum[display.sum.length -1] === '*' || display.sum[display.sum.length -1] === '/') && display.current[display.current.length -1] === '-' && button === '+'
-    ?
-    setDisplay(prevDisplay => {
-      return {
-        ...prevDisplay,
-        sum: display.sum.slice(0, display.sum.length - 1),
-        current: button
+        sum: display.sum === '0' ? display.current.slice(0, display.current.length - 1) + button : display.sum + display.current.slice(0, display.current.length - 1) + button,
+        current: '0'
       }
     })
     :
     setDisplay(prevDisplay => {
       return {
         ...prevDisplay,
-        sum: display.sum,
-        current: display.current + button
+        sum: display.sum === '0' ? display.current + button : display.sum + display.current + button,
+        current: '0'
       }
     })
   }
@@ -209,8 +170,8 @@ function App() {
     setDisplay(prevDisplay => {
       return {
         ...prevDisplay,
-        sum: '',
-        current: display.current + button
+        sum: display.current + button,
+        current: '0'
       }
     })
     :
@@ -229,7 +190,7 @@ function App() {
     setDisplay(prevDisplay => {
       return {
         ...prevDisplay,
-        sum: '',
+        sum: '0',
         current: display.current + button,
         }
       })
@@ -239,7 +200,6 @@ function App() {
       setDisplay(prevDisplay => {
         return {
           ...prevDisplay,
-          sum:'',
           current: display.current * 0.01,
           currentText: (display.current * 0.01 ).toExponential(3)
         }
