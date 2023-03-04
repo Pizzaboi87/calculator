@@ -1,12 +1,14 @@
 import React from 'react';
+import Logo from './Logo';
+import { WrapperContainer } from '../styles';
 
-const Wrapper = ({children}) => {
-    return(
-        <div className='wrapper'>
-            <p>Weiser</p>
-            {children}
-        </div>
-    )
-}
+const Wrapper = ({ children }) => {
+  return (
+    <WrapperContainer>
+      <Logo />
+      {children}
+    </WrapperContainer>
+  );
+};
 
 export default Wrapper;
