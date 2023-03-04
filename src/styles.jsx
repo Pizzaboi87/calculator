@@ -30,7 +30,7 @@ export const WrapperText = styled.p`
   top: 2.5%;
   transform: translate(-50%);
   letter-spacing: 0.3em;
-  color: bisque;
+  color: darkslategray;
   font-size: 1em;
 
   @media (orientation: portrait) {
