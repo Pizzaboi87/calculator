@@ -57,7 +57,7 @@ export const DisplayContainer = styled.div`
     width: 95%;
     border: 1vw ridge #cccccc;
     height: 15vh;
-    margin: 10vw auto 5vw auto;
+    margin: auto;
   }
 
   p {
